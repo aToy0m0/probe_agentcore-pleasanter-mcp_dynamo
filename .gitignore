@@ -1,0 +1,9 @@
+__pycache__/
+cdk.out/
+template.json
+evidence/
+node_modules/
+.env
+.env.*
+*.log
+*.map
