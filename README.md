@@ -2,6 +2,8 @@
 
 Cognito で認証した利用者の Pleasanter API キーを、KMS で暗号化して DynamoDB に保存するサンプルです。AgentCore Gateway の MCP アダプターは、認証済みの利用者に対応するキーだけを復号し、Pleasanter を模した `whoami` ツールを呼び出します。
 
+![AWS 構成図](docs/images/architecture.png)
+
 [AWS 構成図・設計](docs/architecture.md) · [スタックのリソース一覧](docs/stack-resources.md) · [実環境の検証報告](docs/verification.md)
 
 | 経路 | 処理 |

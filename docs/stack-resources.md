@@ -1,5 +1,18 @@
 # デプロイされるスタックのリソース
 
+構成は機能単位で次のように数える。
+
+| 機能 | 数と内訳 |
+| --- | --- |
+| API Gateway | HTTP API 1つ。4ルート、JWT Authorizer、Integration、Stage を含む。 |
+| Cognito | ユーザープール1つ。クライアント2つ、ログインドメイン、スコープ定義、検証ユーザー2人を含む。 |
+| AgentCore Gateway | Gateway 1つ。Lambda Target 1つを含む。 |
+| Lambda | 関数5本。登録、インターセプター、アダプター、モック、自動検証。 |
+| DynamoDB | テーブル1つ。利用者の暗号文とモック照合用の項目を保存する。 |
+| KMS | 1サービス・2鍵。本人情報の署名用 RSA 鍵と、API キー本文の暗号化用対称鍵。 |
+
+補助リソースは IAM ロール6本、ロググループ5本、デプロイ時のカスタムリソース1件。以下は CloudFormation の管理対象を照合するための定義一覧。
+
 アプリのテンプレートは39件のリソースを定義する。環境によって CDK が CDKMetadata を追加する。共有の CDK bootstrap リソースは別スタックが管理する。
 
 | AWS サービス | CloudFormation 型 | 論理 ID |
