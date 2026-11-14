@@ -19,11 +19,16 @@ def line(root, id, x1,y1,x2,y2, dashed=False, arrow=True):
     ET.SubElement(g,"mxPoint",x=str(x2),y=str(y2),**{"as":"targetPoint"})
 
 def page(file, name, title, actors, messages, notes, width, height, start_number=1):
+    if name == "runtime":
+        messages = [(a, b, y + 90, text, response) for a, b, y, text, response in messages]
     diagram=ET.SubElement(file,"diagram",name=name,id=name)
     model=ET.SubElement(diagram,"mxGraphModel",dx="1400",dy="900",grid="1",gridSize="10",page="1",pageScale="1",
         pageWidth=str(width),pageHeight=str(height), math="0",shadow="0")
     root=ET.SubElement(model,"root"); ET.SubElement(root,"mxCell",id="0"); ET.SubElement(root,"mxCell",id="1",parent="0")
     cell(root,"title",title,30,18,width-60,42,"strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=25;")
+    if name == "runtime":
+        cell(root, "handoff", "1枚目の11から引き継ぐ情報 — Claude がコネクター側に保持した Cognito のアクセストークンを使う。",
+             40, 160, width - 80, 58, "strokeColor=#91B5A5;fillColor=#EFF8F2;align=left;spacing=12;")
     bottom=max(m[2] for m in messages)+70
     for i,(x,label) in enumerate(actors):
         cell(root,f"actor{i}",label,x-92,85,184,60,"rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;")
@@ -32,7 +37,7 @@ def page(file, name, title, actors, messages, notes, width, height, start_number
         text = f"{start_number + i}. {text.removeprefix('① ').removeprefix('② ')}"
         xa,xb=actors[a][0],actors[b][0]
         if a==b:
-            cell(root,f"self{i}",text,xa+16,y-22,260,50,"rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;")
+            cell(root,f"self{i}",text,xa+16,y-22,300,max(50, (text.count('\n') + 1) * 23 + 20),"rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;")
         else:
             line(root,f"msg{i}",xa,y,xb,y,response)
             rows=text.count("\n")+1
@@ -58,7 +63,7 @@ page(doc,"login","Claude から Gateway を利用する認証シーケンス",
 (1,1,865,"state を照合し、開始時の処理に紐付ける",False),
 (1,3,1010,"POST /oauth2/token\ncode・client_id・redirect_uri・code_verifier\ngrant_type=authorization_code",False),
 (3,1,1120,"アクセストークン等\nCognito が認証成功後に発行",True),
-(1,4,1230,"MCP tools/call\nAuthorization: Bearer <access_token>",False)
+(1,1,1230,"アクセストークンを Claude 側に保持\n今後 Gateway 呼び出しに使用する\n次ページ12へ続く",False)
 ],
 [
 ("②で使う情報の取得元",
@@ -80,7 +85,7 @@ page(doc,"login","Claude から Gateway を利用する認証シーケンス",
 page(doc,"runtime","Gateway の本人確認から下流 MCP 呼び出しまで",
 [(130,"Claude"),(350,"AgentCore\nGateway"),(590,"インターセプター\nLambda"),(830,"Cognito\n同じプール"),(1070,"アダプター\nLambda"),(1310,"AWS KMS\n署名鍵・暗号化鍵"),(1550,"DynamoDB\n同じテーブル"),(1790,"下流 MCP\n検証ではモック")],
 [
-(0,1,220,"tools/call\nBearer token",False),
+(0,1,220,"保持済みトークンを使用\ntools/call\nBearer access_token",False),
 (1,1,300,"JWT 署名・期限・client・scope を検証",False),
 (1,2,415,"REQUEST＋Authorization",False),
 (2,3,505,"GetUser(access token)",False),

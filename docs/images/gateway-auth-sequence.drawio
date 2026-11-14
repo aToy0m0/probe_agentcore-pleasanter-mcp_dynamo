@@ -117,7 +117,7 @@
           <mxGeometry x="440" y="773" width="310" height="22" as="geometry" />
         </mxCell>
         <mxCell id="self7" value="8. state を照合し、開始時の処理に紐付ける" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
-          <mxGeometry x="446" y="843" width="260" height="50" as="geometry" />
+          <mxGeometry x="446" y="843" width="300" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg8" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
@@ -137,14 +137,8 @@
         <mxCell id="msglabel9" value="10. アクセストークン等&#10;Cognito が認証成功後に発行" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="440" y="1071" width="690" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="msg10" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="430" y="1230" as="sourcePoint" />
-            <mxPoint x="1510" y="1230" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="msglabel10" value="11. MCP tools/call&#10;Authorization: Bearer &lt;access_token&gt;" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="440" y="1181" width="1060" height="44" as="geometry" />
+        <mxCell id="self10" value="11. アクセストークンを Claude 側に保持&#10;今後 Gateway 呼び出しに使用する&#10;次ページ12へ続く" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
+          <mxGeometry x="446" y="1208" width="300" height="89" as="geometry" />
         </mxCell>
         <mxCell id="note0" value="②で使う情報の取得元&#10;管理者が取得・設定するもの&#10;client_id — CDK 出力 ClientId（MCP 用クライアント。登録画面用と区別）&#10;authorize/token URL — Cognito のドメインと OIDC メタデータから取得&#10;redirect_uri — Claude が指定する callback。Cognito の許可リストへ同じ URL を登録&#10;scope — 現行 Gateway が要求する aws.cognito.signin.user.admin と openid&#10;Claude が接続ごとに生成するもの&#10;state — コールバックを開始時の処理に結び付けるランダム値&#10;code_verifier — ランダム値を生成して保持。code_challenge = BASE64URL(SHA256(verifier))" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=#CCD7E0;fillColor=#F5F7FA;align=left;verticalAlign=top;spacing=14;">
           <mxGeometry x="40" y="1330" width="1580" height="270" as="geometry" />
@@ -163,13 +157,16 @@
         <mxCell id="title" value="Gateway の本人確認から下流 MCP 呼び出しまで" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=25;">
           <mxGeometry x="30" y="18" width="1870" height="42" as="geometry" />
         </mxCell>
+        <mxCell id="handoff" value="1枚目の11から引き継ぐ情報 — Claude がコネクター側に保持した Cognito のアクセストークンを使う。" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=#91B5A5;fillColor=#EFF8F2;align=left;spacing=12;">
+          <mxGeometry x="40" y="160" width="1850" height="58" as="geometry" />
+        </mxCell>
         <mxCell id="actor0" value="Claude" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
           <mxGeometry x="38" y="85" width="184" height="60" as="geometry" />
         </mxCell>
         <mxCell id="life0" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="130" y="145" as="sourcePoint" />
-            <mxPoint x="130" y="2250" as="targetPoint" />
+            <mxPoint x="130" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor1" value="AgentCore&#10;Gateway" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -178,7 +175,7 @@
         <mxCell id="life1" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="350" y="145" as="sourcePoint" />
-            <mxPoint x="350" y="2250" as="targetPoint" />
+            <mxPoint x="350" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor2" value="インターセプター&#10;Lambda" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -187,7 +184,7 @@
         <mxCell id="life2" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="590" y="145" as="sourcePoint" />
-            <mxPoint x="590" y="2250" as="targetPoint" />
+            <mxPoint x="590" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor3" value="Cognito&#10;同じプール" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -196,7 +193,7 @@
         <mxCell id="life3" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="830" y="145" as="sourcePoint" />
-            <mxPoint x="830" y="2250" as="targetPoint" />
+            <mxPoint x="830" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor4" value="アダプター&#10;Lambda" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -205,7 +202,7 @@
         <mxCell id="life4" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1070" y="145" as="sourcePoint" />
-            <mxPoint x="1070" y="2250" as="targetPoint" />
+            <mxPoint x="1070" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor5" value="AWS KMS&#10;署名鍵・暗号化鍵" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -214,7 +211,7 @@
         <mxCell id="life5" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1310" y="145" as="sourcePoint" />
-            <mxPoint x="1310" y="2250" as="targetPoint" />
+            <mxPoint x="1310" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor6" value="DynamoDB&#10;同じテーブル" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -223,7 +220,7 @@
         <mxCell id="life6" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1550" y="145" as="sourcePoint" />
-            <mxPoint x="1550" y="2250" as="targetPoint" />
+            <mxPoint x="1550" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="actor7" value="下流 MCP&#10;検証ではモック" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;">
@@ -232,182 +229,182 @@
         <mxCell id="life7" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=none;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1790" y="145" as="sourcePoint" />
-            <mxPoint x="1790" y="2250" as="targetPoint" />
+            <mxPoint x="1790" y="2340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msg0" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="130" y="220" as="sourcePoint" />
-            <mxPoint x="350" y="220" as="targetPoint" />
+            <mxPoint x="130" y="310" as="sourcePoint" />
+            <mxPoint x="350" y="310" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel0" value="12. tools/call&#10;Bearer token" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="140" y="171" width="200" height="44" as="geometry" />
+        <mxCell id="msglabel0" value="12. 保持済みトークンを使用&#10;tools/call&#10;Bearer access_token" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+          <mxGeometry x="140" y="239" width="200" height="66" as="geometry" />
         </mxCell>
         <mxCell id="self1" value="13. JWT 署名・期限・client・scope を検証" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
-          <mxGeometry x="366" y="278" width="260" height="50" as="geometry" />
+          <mxGeometry x="366" y="368" width="300" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg2" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="350" y="415" as="sourcePoint" />
-            <mxPoint x="590" y="415" as="targetPoint" />
+            <mxPoint x="350" y="505" as="sourcePoint" />
+            <mxPoint x="590" y="505" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel2" value="14. REQUEST＋Authorization" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="360" y="388" width="220" height="22" as="geometry" />
+          <mxGeometry x="360" y="478" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg3" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="590" y="505" as="sourcePoint" />
-            <mxPoint x="830" y="505" as="targetPoint" />
+            <mxPoint x="590" y="595" as="sourcePoint" />
+            <mxPoint x="830" y="595" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel3" value="15. GetUser(access token)" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="600" y="478" width="220" height="22" as="geometry" />
+          <mxGeometry x="600" y="568" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg4" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="830" y="595" as="sourcePoint" />
-            <mxPoint x="590" y="595" as="targetPoint" />
+            <mxPoint x="830" y="685" as="sourcePoint" />
+            <mxPoint x="590" y="685" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel4" value="16. ユーザー属性・sub" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="600" y="568" width="220" height="22" as="geometry" />
+          <mxGeometry x="600" y="658" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="self5" value="17. iss・client_id・sub・許可ユーザーを照合" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
-          <mxGeometry x="606" y="653" width="260" height="50" as="geometry" />
+          <mxGeometry x="606" y="743" width="300" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg6" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="590" y="805" as="sourcePoint" />
-            <mxPoint x="1310" y="805" as="targetPoint" />
+            <mxPoint x="590" y="895" as="sourcePoint" />
+            <mxPoint x="1310" y="895" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel6" value="18. Sign（iss・sub・user・method・exp）&#10;有効期限30秒の内部コンテキスト" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="600" y="756" width="700" height="44" as="geometry" />
+          <mxGeometry x="600" y="846" width="700" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg7" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1310" y="900" as="sourcePoint" />
-            <mxPoint x="590" y="900" as="targetPoint" />
+            <mxPoint x="1310" y="990" as="sourcePoint" />
+            <mxPoint x="590" y="990" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel7" value="19. 署名" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="600" y="873" width="700" height="22" as="geometry" />
+          <mxGeometry x="600" y="963" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg8" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="590" y="995" as="sourcePoint" />
-            <mxPoint x="350" y="995" as="targetPoint" />
+            <mxPoint x="590" y="1085" as="sourcePoint" />
+            <mxPoint x="350" y="1085" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel8" value="20. 予約引数 _gatewayAuth を上書き" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="360" y="968" width="220" height="22" as="geometry" />
+          <mxGeometry x="360" y="1058" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg9" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="350" y="1090" as="sourcePoint" />
-            <mxPoint x="1070" y="1090" as="targetPoint" />
+            <mxPoint x="350" y="1180" as="sourcePoint" />
+            <mxPoint x="1070" y="1180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel9" value="21. IAM 権限で Lambda Target を実行" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="360" y="1063" width="700" height="22" as="geometry" />
+          <mxGeometry x="360" y="1153" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg10" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1070" y="1185" as="sourcePoint" />
-            <mxPoint x="1310" y="1185" as="targetPoint" />
+            <mxPoint x="1070" y="1275" as="sourcePoint" />
+            <mxPoint x="1310" y="1275" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel10" value="22. Verify（内部署名）" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1158" width="220" height="22" as="geometry" />
+          <mxGeometry x="1080" y="1248" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg11" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1310" y="1280" as="sourcePoint" />
-            <mxPoint x="1070" y="1280" as="targetPoint" />
+            <mxPoint x="1310" y="1370" as="sourcePoint" />
+            <mxPoint x="1070" y="1370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel11" value="23. 検証結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1253" width="220" height="22" as="geometry" />
+          <mxGeometry x="1080" y="1343" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="self12" value="24. iss・期限・method・user を確認" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
-          <mxGeometry x="1086" y="1338" width="260" height="50" as="geometry" />
+          <mxGeometry x="1086" y="1428" width="300" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg13" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1070" y="1480" as="sourcePoint" />
-            <mxPoint x="1550" y="1480" as="targetPoint" />
+            <mxPoint x="1070" y="1570" as="sourcePoint" />
+            <mxPoint x="1550" y="1570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel13" value="25. iss＋sub から主キーを算出して GetItem&#10;ConsistentRead=True" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1431" width="460" height="44" as="geometry" />
+          <mxGeometry x="1080" y="1521" width="460" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg14" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1550" y="1580" as="sourcePoint" />
-            <mxPoint x="1070" y="1580" as="targetPoint" />
+            <mxPoint x="1550" y="1670" as="sourcePoint" />
+            <mxPoint x="1070" y="1670" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel14" value="26. 暗号文と登録状態" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1553" width="460" height="22" as="geometry" />
+          <mxGeometry x="1080" y="1643" width="460" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg15" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1070" y="1680" as="sourcePoint" />
-            <mxPoint x="1310" y="1680" as="targetPoint" />
+            <mxPoint x="1070" y="1770" as="sourcePoint" />
+            <mxPoint x="1310" y="1770" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel15" value="27. Decrypt（暗号文＋主キーのコンテキスト）" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1653" width="220" height="22" as="geometry" />
+          <mxGeometry x="1080" y="1743" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg16" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1310" y="1780" as="sourcePoint" />
-            <mxPoint x="1070" y="1780" as="targetPoint" />
+            <mxPoint x="1310" y="1870" as="sourcePoint" />
+            <mxPoint x="1070" y="1870" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel16" value="28. 本人用 API キー" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1753" width="220" height="22" as="geometry" />
+          <mxGeometry x="1080" y="1843" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg17" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1070" y="1900" as="sourcePoint" />
-            <mxPoint x="1790" y="1900" as="targetPoint" />
+            <mxPoint x="1070" y="1990" as="sourcePoint" />
+            <mxPoint x="1790" y="1990" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel17" value="29. IAM 署名＋X-API-Key で HTTPS&#10;initialize → initialized → tools/call" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1851" width="700" height="44" as="geometry" />
+          <mxGeometry x="1080" y="1941" width="700" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg18" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1790" y="2000" as="sourcePoint" />
-            <mxPoint x="1070" y="2000" as="targetPoint" />
+            <mxPoint x="1790" y="2090" as="sourcePoint" />
+            <mxPoint x="1070" y="2090" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel18" value="30. MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="1080" y="1973" width="700" height="22" as="geometry" />
+          <mxGeometry x="1080" y="2063" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg19" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1070" y="2090" as="sourcePoint" />
-            <mxPoint x="350" y="2090" as="targetPoint" />
+            <mxPoint x="1070" y="2180" as="sourcePoint" />
+            <mxPoint x="350" y="2180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel19" value="31. MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="360" y="2063" width="700" height="22" as="geometry" />
+          <mxGeometry x="360" y="2153" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg20" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="350" y="2180" as="sourcePoint" />
-            <mxPoint x="130" y="2180" as="targetPoint" />
+            <mxPoint x="350" y="2270" as="sourcePoint" />
+            <mxPoint x="130" y="2270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msglabel20" value="32. MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
-          <mxGeometry x="140" y="2153" width="200" height="22" as="geometry" />
+          <mxGeometry x="140" y="2243" width="200" height="22" as="geometry" />
         </mxCell>
         <mxCell id="note0" value="認証情報の役割と検証範囲&#10;Cognito の access token — Claude から Gateway と GetUser に送る。&#10;署名付き内部コンテキスト — 本人確認後に生成し、アダプターで検証する。&#10;Pleasanter API キー — DynamoDB の暗号文から復号し、下流 MCP への通信に使用する。&#10;署名不正・期限切れは拒否。未登録・disabled は復号せずエラー。モックの誤キーは拒否。&#10;tools/list はインターセプターがアダプターを直接呼ぶ別経路。キー取得・復号・下流呼び出しは行わない。&#10;このページの Gateway 以降は検証 Lambda からの SDK ログインで実環境試験済み。" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=#CCD7E0;fillColor=#F5F7FA;align=left;verticalAlign=top;spacing=14;">
-          <mxGeometry x="40" y="2280" width="1850" height="220" as="geometry" />
+          <mxGeometry x="40" y="2370" width="1850" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

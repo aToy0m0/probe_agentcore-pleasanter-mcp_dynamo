@@ -24,6 +24,8 @@ MCP クライアントは Claude のリモートコネクターを想定する�
 
 現行スタックの既定 callback はローカル用なので、Claude 接続では `PROBE_CALLBACK_URL` を Claude 用に設定してデプロイする。この資料の Claude OAuth 部分は想定フローで、実環境では未検証。Client ID の設定、ディスカバリー、scope と必要に応じた resource パラメータなど、実際の Claude 接続条件は接続試験で確認する。
 
+1枚目の手順11で、Claude は取得した Cognito のアクセストークンをコネクター側に保持する。2枚目の手順12では、そのトークンを取り出して Gateway への Bearer 認証に使う。Claude 内部の具体的な保存媒体や暗号化方式はこの資料では特定していない。
+
 ## Gateway と本人用キーの使用
 
 ![Gateway の認証と下流呼び出し](images/gateway-auth-runtime.png)
