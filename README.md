@@ -4,7 +4,7 @@ Cognito で認証した利用者の Pleasanter API キーを、KMS で暗号化�
 
 ![AWS 構成図](docs/images/architecture.png)
 
-[AWS 構成図・設計](docs/architecture.md) · [スタックのリソース一覧](docs/stack-resources.md) · [実環境の検証報告](docs/verification.md)
+[Claude の認証シーケンス（draw.io・PNG）](docs/gateway-auth-sequence.md) · [AWS 構成図・設計](docs/architecture.md) · [スタックのリソース一覧](docs/stack-resources.md) · [実環境の検証報告](docs/verification.md)
 
 | 経路 | 処理 |
 | --- | --- |
