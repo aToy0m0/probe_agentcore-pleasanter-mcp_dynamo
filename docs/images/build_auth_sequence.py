@@ -18,7 +18,7 @@ def line(root, id, x1,y1,x2,y2, dashed=False, arrow=True):
     ET.SubElement(g,"mxPoint",x=str(x1),y=str(y1),**{"as":"sourcePoint"})
     ET.SubElement(g,"mxPoint",x=str(x2),y=str(y2),**{"as":"targetPoint"})
 
-def page(file, name, title, actors, messages, notes, width, height):
+def page(file, name, title, actors, messages, notes, width, height, start_number=1):
     diagram=ET.SubElement(file,"diagram",name=name,id=name)
     model=ET.SubElement(diagram,"mxGraphModel",dx="1400",dy="900",grid="1",gridSize="10",page="1",pageScale="1",
         pageWidth=str(width),pageHeight=str(height), math="0",shadow="0")
@@ -29,6 +29,7 @@ def page(file, name, title, actors, messages, notes, width, height):
         cell(root,f"actor{i}",label,x-92,85,184,60,"rounded=0;strokeColor=#4C6981;fillColor=#EDF3F8;fontStyle=1;align=center;")
         line(root,f"life{i}",x,145,x,bottom,True,False)
     for i,(a,b,y,text,response) in enumerate(messages):
+        text = f"{start_number + i}. {text.removeprefix('① ').removeprefix('② ')}"
         xa,xb=actors[a][0],actors[b][0]
         if a==b:
             cell(root,f"self{i}",text,xa+16,y-22,260,50,"rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;")
@@ -109,7 +110,7 @@ page(doc,"runtime","Gateway の本人確認から下流 MCP 呼び出しまで",
 "署名不正・期限切れは拒否。未登録・disabled は復号せずエラー。モックの誤キーは拒否。\n"
 "tools/list はインターセプターがアダプターを直接呼ぶ別経路。キー取得・復号・下流呼び出しは行わない。\n"
 "このページの Gateway 以降は検証 Lambda からの SDK ログインで実環境試験済み。")
-], 1930,2540)
+], 1930,2540, start_number=12)
 ET.indent(doc)
 ET.ElementTree(doc).write(HERE/"gateway-auth-sequence.drawio",encoding="utf-8",xml_declaration=True)
 print("written", HERE/"gateway-auth-sequence.drawio")

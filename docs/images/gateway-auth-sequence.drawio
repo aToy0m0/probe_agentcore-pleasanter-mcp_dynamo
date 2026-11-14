@@ -59,7 +59,7 @@
             <mxPoint x="430" y="215" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel0" value="① MCP 接続を開始" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel0" value="1. MCP 接続を開始" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="130" y="188" width="290" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg1" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -68,7 +68,7 @@
             <mxPoint x="760" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel1" value="② 認可 URL を開く&#10;client_id・redirect_uri・scope・state&#10;response_type=code・code_challenge・S256" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel1" value="2. 認可 URL を開く&#10;client_id・redirect_uri・scope・state&#10;response_type=code・code_challenge・S256" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="440" y="259" width="310" height="66" as="geometry" />
         </mxCell>
         <mxCell id="msg2" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -77,7 +77,7 @@
             <mxPoint x="1140" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel2" value="GET /oauth2/authorize&#10;②のパラメータを送信" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel2" value="3. GET /oauth2/authorize&#10;②のパラメータを送信" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="770" y="391" width="360" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg3" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -86,7 +86,7 @@
             <mxPoint x="760" y="535" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel3" value="Cognito のログイン画面で認証情報を入力" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel3" value="4. Cognito のログイン画面で認証情報を入力" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="130" y="508" width="620" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg4" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -95,7 +95,7 @@
             <mxPoint x="1140" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel4" value="ログイン情報を Cognito に送信" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel4" value="5. ログイン情報を Cognito に送信" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="770" y="593" width="360" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg5" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -104,7 +104,7 @@
             <mxPoint x="760" y="710" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel5" value="302 redirect_uri?code=...&amp;state=..." vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel5" value="6. 302 redirect_uri?code=...&amp;state=..." vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="770" y="683" width="360" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg6" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -113,10 +113,10 @@
             <mxPoint x="430" y="800" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel6" value="Claude の callback に code と state を渡す" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel6" value="7. Claude の callback に code と state を渡す" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="440" y="773" width="310" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="self7" value="state を照合し、開始時の処理に紐付ける" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
+        <mxCell id="self7" value="8. state を照合し、開始時の処理に紐付ける" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
           <mxGeometry x="446" y="843" width="260" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg8" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -125,7 +125,7 @@
             <mxPoint x="1140" y="1010" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel8" value="POST /oauth2/token&#10;code・client_id・redirect_uri・code_verifier&#10;grant_type=authorization_code" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel8" value="9. POST /oauth2/token&#10;code・client_id・redirect_uri・code_verifier&#10;grant_type=authorization_code" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="440" y="939" width="690" height="66" as="geometry" />
         </mxCell>
         <mxCell id="msg9" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -134,7 +134,7 @@
             <mxPoint x="430" y="1120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel9" value="アクセストークン等&#10;Cognito が認証成功後に発行" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel9" value="10. アクセストークン等&#10;Cognito が認証成功後に発行" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="440" y="1071" width="690" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg10" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -143,7 +143,7 @@
             <mxPoint x="1510" y="1230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel10" value="MCP tools/call&#10;Authorization: Bearer &lt;access_token&gt;" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel10" value="11. MCP tools/call&#10;Authorization: Bearer &lt;access_token&gt;" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="440" y="1181" width="1060" height="44" as="geometry" />
         </mxCell>
         <mxCell id="note0" value="②で使う情報の取得元&#10;管理者が取得・設定するもの&#10;client_id — CDK 出力 ClientId（MCP 用クライアント。登録画面用と区別）&#10;authorize/token URL — Cognito のドメインと OIDC メタデータから取得&#10;redirect_uri — Claude が指定する callback。Cognito の許可リストへ同じ URL を登録&#10;scope — 現行 Gateway が要求する aws.cognito.signin.user.admin と openid&#10;Claude が接続ごとに生成するもの&#10;state — コールバックを開始時の処理に結び付けるランダム値&#10;code_verifier — ランダム値を生成して保持。code_challenge = BASE64URL(SHA256(verifier))" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=#CCD7E0;fillColor=#F5F7FA;align=left;verticalAlign=top;spacing=14;">
@@ -241,10 +241,10 @@
             <mxPoint x="350" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel0" value="tools/call&#10;Bearer token" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel0" value="12. tools/call&#10;Bearer token" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="140" y="171" width="200" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="self1" value="JWT 署名・期限・client・scope を検証" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
+        <mxCell id="self1" value="13. JWT 署名・期限・client・scope を検証" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
           <mxGeometry x="366" y="278" width="260" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg2" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -253,7 +253,7 @@
             <mxPoint x="590" y="415" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel2" value="REQUEST＋Authorization" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel2" value="14. REQUEST＋Authorization" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="360" y="388" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg3" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -262,7 +262,7 @@
             <mxPoint x="830" y="505" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel3" value="GetUser(access token)" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel3" value="15. GetUser(access token)" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="600" y="478" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg4" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -271,10 +271,10 @@
             <mxPoint x="590" y="595" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel4" value="ユーザー属性・sub" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel4" value="16. ユーザー属性・sub" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="600" y="568" width="220" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="self5" value="iss・client_id・sub・許可ユーザーを照合" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
+        <mxCell id="self5" value="17. iss・client_id・sub・許可ユーザーを照合" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
           <mxGeometry x="606" y="653" width="260" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg6" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -283,7 +283,7 @@
             <mxPoint x="1310" y="805" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel6" value="Sign（iss・sub・user・method・exp）&#10;有効期限30秒の内部コンテキスト" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel6" value="18. Sign（iss・sub・user・method・exp）&#10;有効期限30秒の内部コンテキスト" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="600" y="756" width="700" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg7" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -292,7 +292,7 @@
             <mxPoint x="590" y="900" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel7" value="署名" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel7" value="19. 署名" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="600" y="873" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg8" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -301,7 +301,7 @@
             <mxPoint x="350" y="995" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel8" value="予約引数 _gatewayAuth を上書き" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel8" value="20. 予約引数 _gatewayAuth を上書き" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="360" y="968" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg9" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -310,7 +310,7 @@
             <mxPoint x="1070" y="1090" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel9" value="IAM 権限で Lambda Target を実行" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel9" value="21. IAM 権限で Lambda Target を実行" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="360" y="1063" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg10" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -319,7 +319,7 @@
             <mxPoint x="1310" y="1185" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel10" value="Verify（内部署名）" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel10" value="22. Verify（内部署名）" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1158" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg11" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -328,10 +328,10 @@
             <mxPoint x="1070" y="1280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel11" value="検証結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel11" value="23. 検証結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1253" width="220" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="self12" value="iss・期限・method・user を確認" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
+        <mxCell id="self12" value="24. iss・期限・method・user を確認" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;rounded=0;strokeColor=#A5B5C3;fillColor=#F7F9FB;align=left;spacing=8;">
           <mxGeometry x="1086" y="1338" width="260" height="50" as="geometry" />
         </mxCell>
         <mxCell id="msg13" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -340,7 +340,7 @@
             <mxPoint x="1550" y="1480" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel13" value="iss＋sub から主キーを算出して GetItem&#10;ConsistentRead=True" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel13" value="25. iss＋sub から主キーを算出して GetItem&#10;ConsistentRead=True" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1431" width="460" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg14" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -349,7 +349,7 @@
             <mxPoint x="1070" y="1580" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel14" value="暗号文と登録状態" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel14" value="26. 暗号文と登録状態" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1553" width="460" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg15" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -358,7 +358,7 @@
             <mxPoint x="1310" y="1680" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel15" value="Decrypt（暗号文＋主キーのコンテキスト）" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel15" value="27. Decrypt（暗号文＋主キーのコンテキスト）" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1653" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg16" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -367,7 +367,7 @@
             <mxPoint x="1070" y="1780" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel16" value="本人用 API キー" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel16" value="28. 本人用 API キー" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1753" width="220" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg17" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;">
@@ -376,7 +376,7 @@
             <mxPoint x="1790" y="1900" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel17" value="IAM 署名＋X-API-Key で HTTPS&#10;initialize → initialized → tools/call" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel17" value="29. IAM 署名＋X-API-Key で HTTPS&#10;initialize → initialized → tools/call" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1851" width="700" height="44" as="geometry" />
         </mxCell>
         <mxCell id="msg18" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -385,7 +385,7 @@
             <mxPoint x="1070" y="2000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel18" value="MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel18" value="30. MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="1080" y="1973" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg19" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -394,7 +394,7 @@
             <mxPoint x="350" y="2090" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel19" value="MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel19" value="31. MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="360" y="2063" width="700" height="22" as="geometry" />
         </mxCell>
         <mxCell id="msg20" edge="1" parent="1" style="html=0;strokeColor=#25384A;endArrow=open;endFill=0;dashed=1;">
@@ -403,7 +403,7 @@
             <mxPoint x="130" y="2180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="msglabel20" value="MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
+        <mxCell id="msglabel20" value="32. MCP 実行結果" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=bottom;">
           <mxGeometry x="140" y="2153" width="200" height="22" as="geometry" />
         </mxCell>
         <mxCell id="note0" value="認証情報の役割と検証範囲&#10;Cognito の access token — Claude から Gateway と GetUser に送る。&#10;署名付き内部コンテキスト — 本人確認後に生成し、アダプターで検証する。&#10;Pleasanter API キー — DynamoDB の暗号文から復号し、下流 MCP への通信に使用する。&#10;署名不正・期限切れは拒否。未登録・disabled は復号せずエラー。モックの誤キーは拒否。&#10;tools/list はインターセプターがアダプターを直接呼ぶ別経路。キー取得・復号・下流呼び出しは行わない。&#10;このページの Gateway 以降は検証 Lambda からの SDK ログインで実環境試験済み。" vertex="1" parent="1" style="fontFamily=Yu Gothic;fontSize=16;html=0;whiteSpace=wrap;strokeColor=#CCD7E0;fillColor=#F5F7FA;align=left;verticalAlign=top;spacing=14;">
